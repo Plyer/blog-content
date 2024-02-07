@@ -1,0 +1,14 @@
+name: call_another_workflow
+
+on:
+  push:
+    branches:
+    - master
+      
+jobs:
+  call_another_workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - env:
+        GH_TOKEN: ${{ secrets.MY_TOKEN }}
+      run: 'gh workflow run build.yml -R plyer/plyer.github.io'
