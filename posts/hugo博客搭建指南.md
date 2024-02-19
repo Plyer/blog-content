@@ -13,7 +13,7 @@ draft = false
 
 创建博客内容仓库 `blog-content` 和网站仓库 `plyer.github.io`。
 
-网站仓库名称使用 `{github_username}.github.io` 的格式，这样可以直接通过 https://{github_username}. Github. Io 的 URL 访问博客网站，而不需要加上仓库名称作为 URL Path。
+网站仓库名称使用 `{github_username}.github.io` 的格式，这样可以直接通过 https://{github_username}.github.io 的 URL 访问博客网站，而不需要加上仓库名称作为 URL Path。
 
 ## 使用 hugo 创建网站
 
