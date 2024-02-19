@@ -1,6 +1,6 @@
 +++
 title = 'hugo博客搭建指南'
-createtime = 2024-02-19 T18:00:04
+createtime = 2024-02-19 18:00:04
 draft = false
 +++
 # Hugo 博客搭建指南
