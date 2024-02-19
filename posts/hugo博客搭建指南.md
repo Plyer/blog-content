@@ -1,7 +1,7 @@
 +++
 title = ' hugo博客搭建指南 '
 date = 2024-02-19T21:00:30+08:00
-draft = true
+draft = false
 +++
 ## 整体架构
 
