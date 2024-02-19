@@ -1,10 +1,8 @@
 +++
-title = 'hugo博客搭建指南'
-date = 2024-02-19T18:10:04+08:00
+title = ' hugo 博客搭建指南 '
+date = 2024-02-19 T20:55:45+08:00
 draft = false
 +++
-# Hugo 博客搭建指南
-
 ## 整体架构
 
 在 github 托管两个仓库，仓库 1 保存博客内容源文件，仓库 2 保存 Hugo 生成的网站文件，博客内容仓库通过 git submodule 的方式在仓库 2 管理。使用 Obsidian git 拉取博客内容仓库，通过 ob 编写博客并推送到仓库 1，推送后触发仓库 2 github action 使用 hugo 构建网站并部署到 github pages。
