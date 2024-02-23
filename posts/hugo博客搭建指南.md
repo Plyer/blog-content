@@ -82,6 +82,7 @@ git push
 Obsidian 中增加命为 blog 的文件夹，在其中拉取 `blog-content` 仓库，写一篇文章并推送到 github 仓库中，触发 github action 自动构建发布。
 
 ---
+
 ## 参考文献
 
 - [如何用 GitHub Pages + Hugo 搭建个人博客 · 小绵尾巴 (cuttontail.blog)](https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/#2-%E5%AE%89%E8%A3%85-hugo)
