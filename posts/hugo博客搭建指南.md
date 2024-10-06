@@ -1,12 +1,14 @@
 +++
-title = ' hugo博客搭建指南 '
+title = ' hugo 博客搭建指南 '
 date = 2024-02-19T21:45:36+08:00
 draft = false
 uglyURLs = true
 +++
 ## 整体架构
 
-在 github 托管两个仓库，仓库 1 保存博客内容源文件，仓库 2 保存 Hugo 生成的网站文件，博客内容仓库通过 git submodule 的方式在仓库 2 管理。使用 Obsidian git 拉取博客内容仓库，通过 ob 编写博客并推送到仓库 1，推送后触发仓库 2 github action 使用 hugo 构建网站并部署到 github pages。
+在 github 托管两个仓库，仓库1 `blog-content` 保存博客内容源文件，仓库2 `plyer.github.io` 保存 Hugo 生成的网站文件，博客内容仓库通过 git submodule 的方式在网站仓库管理。
+
+使用 Obsidian git 拉取 `blog-content` 仓库，在 ob 写完博客后进行 `git push`，推送后触发 `blog-content` 仓库的 github action，这个 action 又会触发 `plyer.github.io` 仓库的 github action，第二个 action 使用 hugo 构建网站并部署到 github pages。
 
 ## 创建 github 仓库
 
@@ -56,7 +58,7 @@ vim post/test.md
 hugo server
 ```
 
-输出静态文件到 public 目录命令：`hugo`。这个目录可以不上传 git 远程仓库，github workflow 能处理。
+> 使用 `hugo` 命令可以输出网站的静态文件到 public 目录，这个目录的内容就是部署静态网站的必要文件。
 
 推送到 `plyer.github.io` 仓库：
 
@@ -69,9 +71,9 @@ git push
 
 **一、配置 `blog-content` 仓库的 workflow**
 
-创建一个 github ak，包含 plyer 仓库的 workflow 权限。使用 `gh workflow run build.yml -R plyer/plyer.github.io` 触发 ` plyer.github.io` 仓库的 `build.yml` workflw。
+创建一个 github ak，包含 `plyer.github.io` 仓库的 workflow 权限。使用 `gh workflow run build.yml -R plyer/plyer.github.io` 触发 ` plyer.github.io` 仓库的 `build.yml` workflw。
 
-二、配置 `plyer.github.io` 仓库的 workflow
+**二、配置 `plyer.github.io` 仓库的 workflow**
 
 1. Checkout 本仓库和子模块
 2. 更新子模块内容
@@ -79,7 +81,11 @@ git push
 
 ## 发布博客
 
-Obsidian 中增加命为 blog 的文件夹，在其中拉取 `blog-content` 仓库，写一篇文章并推送到 github 仓库中，触发 github action 自动构建发布。
+Obsidian 中增加名为 blog 的文件夹，在其中拉取 `blog-content` 仓库，写一篇文章并推送到 github 仓库中，触发 github action 自动构建发布。
+
+## 主题推荐
+
+参考 https://jametry.github.io/page/2/
 
 ---
 
